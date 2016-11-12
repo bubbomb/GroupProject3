@@ -19,5 +19,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', 'our_is531_1d_site.views.home', name='home'),
+#    url(r'^$', 'our_is531_1d_site.views.home', name='home'),
+     url(r'^', TemplateView.as_view(template_name='static_pages/index.html'), name='home'),
 ]
