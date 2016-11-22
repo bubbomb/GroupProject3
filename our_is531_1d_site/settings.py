@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'our_is531_1d_site.wsgi.application'
 DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': os.environ['Project3DB'],
-           'USER': os.environ['group1d'],
-           'PASSWORD': os.environ['is531group'],
-           'HOST': os.environ['aaxcfc8fmgcqzg.ctyf9rffhpjz.us-west-2.rds.amazonaws.com'],
-           'PORT': os.environ['5432'],
+           'NAME': 'Project3DB',
+           'USER': 'group1d',
+           'PASSWORD': 'is531group',
+           'HOST': 'aaxcfc8fmgcqzg.ctyf9rffhpjz.us-west-2.rds.amazonaws.com',
+           'PORT': '5432',
        }
 }
 
