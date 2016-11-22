@@ -17,19 +17,21 @@ class notes(models.Model):
     )
 
 class assets(models.Model):
-    current_location = models.CharField(max_length = 150)
-    org_tag = models.CharField(max_length=10)
+    current_location = models.CharField(max_length = 150, null=True)
+    org_tag = models.CharField(max_length=10, null=True)
     manufacturer = models.ForeignKey(
         'manufacturers',
+        null=True,
         #on_delete=models.CASCADE,
     )
     employee = models.ForeignKey(
         'employees',
+        null=True,
         #on_delete=models.CASCADE,
     )
-    part_number = models.CharField(max_length=254)
-    description = models.TextField()
-    date_implemented = models.DateField()
+    part_number = models.CharField(max_length=254, null=True)
+    description = models.TextField(null=True)
+    date_implemented = models.DateField(null=True)
 
     MANUFACTURER_CHOICES = (
         # Acer, 'Acer',

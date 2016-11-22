@@ -14,9 +14,27 @@ integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/
 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
   <body>
-
-DATA HERE!
-
+<div class="container">
+  <div class="row">
+    DATA HERE!
+    <table class-"table table-striped">
+      <thead>
+        <th>Current Location</th>
+        <th>Org Tag</th>
+        <th>Part Number</th>
+        <th>Description</th>
+      </thead>
+      {% for asset in assets %}
+        <tr>
+          <td>{{ asset.current_location }}</td>
+          <td>{{ asset.org_tag }}</td>
+          <td>{{ asset.part_number }}</td>
+          <td>{{ asset.description }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
 
   </body> 
 

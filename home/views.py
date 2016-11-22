@@ -8,21 +8,40 @@ from django import forms
 def index(request):
 
 	if request.method =="POST":
-		
+
 		print(request.POST)
 		form = request.POST
-		print(form.get('current_office'))
+		#print(form.get('current_office'))
 
-	print('index page')
+		current_office =form.get('current_office')
+		manufacturer = form.get('manufacturer')
+		other_manufacturer = form.get('other_manufacturer')
+		date_implemented = form.get('date_implemented')
+		org_tag = form.get('org_tag')
+		part_number = form.get('manufacturer_part_number')
+		maintenance_notes = form.get('maintenance_notes')
+
+		a = hmod.assets()
+		a.current_office =current_office
+		a.part_number = part_number
+		a.org_tag = org_tag
+		a.save()
+
+
+
+	#print('index page')
 	return render(request, 'index.html')
 
 def data(request):
 
-	template_vars = []
 
+	assets = hmod.assets.objects.all()
+	print(assets)
 	print('data page!')
 
-	return render(request, 'data.html', template_vars)
+	
+
+	return render(request, 'data.html', {'assets':assets})
 
 # class AssetForm(forms.Form):
 # 	"""docstring for AssetForm"""
