@@ -13,38 +13,29 @@ integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
-
   <body>
-<div class="container">
-  <div class="row">
-    <div class="h1">
-      DATA HERE
-    </div>
-    <a href="/home/" class ="btn btn-default">Enter Asset</a>
-    <a href="/home/manufacturer" class ="btn btn-default">Enter Manufacturer</a>
-    <table class="table table-striped">
-      <thead>
-        <th>Current Location</th>
-        <th>Org Tag</th>
-        <th>Part Number</th>
-        <th>Date Implemented</th>
-        <th>Description</th>
-        <th>Description</th>
 
-      </thead>
-      {% for asset in assets %}
-        <tr>
-          <td>{{ asset.current_location }}</td>
-          <td>{{ asset.org_tag }}</td>
-          <td>{{ asset.part_number }}</td>
-          <td>{{ asset.date_implemented }}</td>
-          <td>{{ asset.description }}</td>
-          <td>{{ asset.description }}</td>
-        </tr>
-      {% endfor %}
-    </table>
+Manufacturer
+
+  <div class="container">
+        <div class="row">
+          <div class="col-md-5 col-md-offset-1">
+            <div class="">
+              <h2>Input Information Here:</h2>
+            </div>
+            <form action="" method="POST">{% csrf_token %}
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" name="name" placeholder="Input the manufacturer name...">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+              <a href="/home/data" class ="btn btn-default">Back to Data</a>
+            </form>
+
+          </div>
+        </div>
+      </div>
   </div>
-</div>
 
   </body> 
 
