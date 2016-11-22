@@ -83,8 +83,8 @@ DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.postgresql_psycopg2',
            'NAME': 'Project3DB',
-           'USER': 'group1d',
-           'PASSWORD': 'is531group',
+           'USER': 'ebroot',
+           'PASSWORD': 'helpmeout',
            'HOST': 'aaxcfc8fmgcqzg.ctyf9rffhpjz.us-west-2.rds.amazonaws.com',
            'PORT': '5432',
        }
