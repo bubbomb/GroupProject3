@@ -17,14 +17,15 @@ class notes(models.Model):
     )
 
 class assets(models.Model):
+    current_location = models.CharField(max_length = 150)
     org_tag = models.CharField(max_length=10)
     manufacturer = models.ForeignKey(
         'manufacturers',
-        on_delete=models.CASCADE,
+        #on_delete=models.CASCADE,
     )
     employee = models.ForeignKey(
         'employees',
-        on_delete=models.CASCADE,
+        #on_delete=models.CASCADE,
     )
     part_number = models.CharField(max_length=254)
     description = models.TextField()
