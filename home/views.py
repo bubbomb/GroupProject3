@@ -71,6 +71,21 @@ def manufacturer(request):
 
 	return render(request,'manufacturer.html')
 
+def notes(request):
+
+	if request.method =="POST":
+
+		print(request.POST)
+		print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+		form = request.POST
+		name = form.get('name')
+		print(name)
+
+		m = hmod.notes()
+		m.name = name
+		m.save()
+
+	return render(request,'manufacturer.html')
 
 
 # class AssetForm(forms.Form):

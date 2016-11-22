@@ -79,24 +79,24 @@ WSGI_APPLICATION = 'our_is531_1d_site.wsgi.application'
 
 
 
-DATABASES = {
-       'default': {
-           'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': 'ebdb',
-           'USER': 'ebroot',
-           'PASSWORD': 'helpmeout',
-           'HOST': 'aaxcfc8fmgcqzg.ctyf9rffhpjz.us-west-2.rds.amazonaws.com',
-           'PORT': '5432',
-       }
-}
-
-
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
+#        'default': {
+#            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#            'NAME': 'ebdb',
+#            'USER': 'ebroot',
+#            'PASSWORD': 'helpmeout',
+#            'HOST': 'aaxcfc8fmgcqzg.ctyf9rffhpjz.us-west-2.rds.amazonaws.com',
+#            'PORT': '5432',
+#        }
 # }
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 
 # Password validation

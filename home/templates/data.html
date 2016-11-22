@@ -25,21 +25,24 @@ integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7T
     <table class="table table-striped">
       <thead>
         <th>Current Location</th>
-        <th>Org Tag</th>
-        <th>Part Number</th>
-        <th>Date Implemented</th>
+        <th>Organizational Tag</th>
         <th>Manufacturer</th>
+        <th>Part Number</th>
         <th>Description</th>
+        <th>Date Implemented</th>
+        <th>Maintenance Notes</th>
 
       </thead>
       {% for asset in assets %}
         <tr>
           <td>{{ asset.current_location }}</td>
           <td>{{ asset.org_tag }}</td>
-          <td>{{ asset.part_number }}</td>
-          <td>{{ asset.date_implemented }}</td>
           <td>{{ asset.manufacturer.name }}</td>
+          <td>{{ asset.part_number }}</td>
           <td>{{ asset.description }}</td>
+          <td>{{ asset.date_implemented }}</td>
+          <td>{{ asset.description }}</td>
+          
         </tr>
       {% endfor %}
     </table>
