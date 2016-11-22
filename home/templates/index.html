@@ -30,15 +30,26 @@ integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7T
             </div>
             <div class="form-group">
               <label>Manufacturer</label>
-              <input type="text" class="form-control" name="manufacturer" placeholder="Input the manufacturer...">
+              <select type="text" class="form-control" name="manufacturer" placeholder="Input the manufacturer...">
+                  {% for manufacturer in manufacturers %}
+                    
+                      <option>{{ manufacturer.name }}</option>
+                  {% endfor %}
+              </select>
             </div>
             <div class="form-group">
               <label>Other Manufacturer</label>
-              <input type="text" class="form-control" name="other_manufacturer" placeholder="Input the manufacturer...">
+              <select type="text" class="form-control" name="other_manufacturer" placeholder="Input the manufacturer...">
+                  {% for manufacturer in manufacturers %}
+                    
+                      <option>{{ manufacturer.name }}</option>
+                  {% endfor %}
+              </select>
             </div>
             <div class="form-group">
               <label>Manufacturer Part #</label>
               <input type="text" class="form-control" name="manufacturer_part_number" placeholder="Input the manufacturer part number...">
+
             </div>
             <div class="form-group">
               <label>Description</label>
@@ -46,7 +57,7 @@ integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7T
             </div>
             <div class="form-group">
               <label>Date Implemented</label>
-              <input type="month" class="form-control" name="date_implemented" placeholder="Input the date implemented...">
+              <input type="date" class="form-control" name="date_implemented" placeholder="Input the date implemented..." required>
             </div>
             <div class="form-group">
               <label>Maintenance Notes</label>
