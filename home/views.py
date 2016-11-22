@@ -31,6 +31,8 @@ def index(request):
 		a.org_tag = org_tag
 		a.description = description
 		a.date_implemented = date_implemented
+		a.manufacturer = hmod.manufacturers.objects.get(name=manufacturer)
+		print(a)
 		a.save()
 
 
@@ -46,12 +48,12 @@ def data(request):
 
 
 	assets = hmod.assets.objects.all()
-	#print(assets)
+	print(assets)
 	#print('data page!')
 
 	
-
 	return render(request, 'data.html', {'assets':assets})
+
 
 def manufacturer(request):
 

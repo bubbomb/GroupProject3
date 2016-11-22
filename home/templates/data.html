@@ -28,7 +28,7 @@ integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7T
         <th>Org Tag</th>
         <th>Part Number</th>
         <th>Date Implemented</th>
-        <th>Description</th>
+        <th>Manufacturer</th>
         <th>Description</th>
 
       </thead>
@@ -38,7 +38,7 @@ integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7T
           <td>{{ asset.org_tag }}</td>
           <td>{{ asset.part_number }}</td>
           <td>{{ asset.date_implemented }}</td>
-          <td>{{ asset.description }}</td>
+          <td>{{ asset.manufacturer.name }}</td>
           <td>{{ asset.description }}</td>
         </tr>
       {% endfor %}
