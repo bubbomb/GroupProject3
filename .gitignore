@@ -5,4 +5,6 @@
 !.elasticbeanstalk/*.global.yml
 our_is531_1d_site/__pycache__/
 our_is531_1d_site/local_settings.py
-home/__pycache__/apps.cpython-35.pyc
+home/__pycache__/*
+static/admin/*
+
