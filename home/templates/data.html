@@ -22,6 +22,7 @@ integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7T
     </div>
     <a href="/home/" class ="btn btn-default">Enter Asset</a>
     <a href="/home/manufacturer" class ="btn btn-default">Enter Manufacturer</a>
+    <a href="/home/notes" class ="btn btn-default">Enter Notes</a>
     <table class="table table-striped">
       <thead>
         <th>Current Location</th>
@@ -41,7 +42,22 @@ integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7T
           <td>{{ asset.part_number }}</td>
           <td>{{ asset.description }}</td>
           <td>{{ asset.date_implemented }}</td>
-          <td>{{ asset.description }}</td>
+          <td>
+
+            <div class="panel-group">
+              
+                  <ul>
+                    {% for note in asset.notes %}
+
+                    <li class="list-group-item">
+                      {{note.note}}
+                    </li>
+
+
+                    {% endfor %}
+                  </ul>
+            </div> 
+          </td>
           
         </tr>
       {% endfor %}

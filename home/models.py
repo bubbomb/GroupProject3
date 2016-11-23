@@ -33,6 +33,9 @@ class assets(models.Model):
     description = models.TextField(null=True)
     date_implemented = models.DateField(null=True)
 
+    def get_notes(self):
+        return notes.objects.all().filter(asset =self)
+
     MANUFACTURER_CHOICES = (
         # Acer, 'Acer',
         # Alien, 'Alien',

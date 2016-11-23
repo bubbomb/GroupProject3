@@ -50,7 +50,10 @@ def data(request):
 	assets = hmod.assets.objects.all()
 	print(assets)
 	#print('data page!')
+	for asset in assets:
 
+		asset.notes = asset.get_notes()
+	
 	
 	return render(request, 'data.html', {'assets':assets})
 
@@ -78,14 +81,21 @@ def notes(request):
 		print(request.POST)
 		print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
 		form = request.POST
-		name = form.get('name')
-		print(name)
+		note = form.get('maintenance_notes')
+		asset = form.get('asset')
+
 
 		m = hmod.notes()
-		m.name = name
+		m.note = note
+		m.asset = hmod.assets.objects.get(part_number=asset)
 		m.save()
 
-	return render(request,'manufacturer.html')
+	assets = hmod.assets.objects.all()
+	for asset in assets:
+
+		asset.notes = asset.get_notes()
+
+	return render(request,'notes.html',{'assets':assets})
 
 
 # class AssetForm(forms.Form):
